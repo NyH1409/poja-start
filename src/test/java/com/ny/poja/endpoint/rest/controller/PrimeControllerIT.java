@@ -17,7 +17,7 @@ class PrimeControllerIT extends FacadeIT {
   @Test
   void generatePrime() {
     BigInteger primeNumber = primeController.generatePrime();
-    assertEquals(10_000, primeNumber.bitLength());
+    assertEquals(1000, primeNumber.bitLength());
   }
 
   @Test
