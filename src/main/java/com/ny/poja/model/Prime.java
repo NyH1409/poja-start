@@ -9,6 +9,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.Type;
 
 @Entity
@@ -23,6 +24,6 @@ public class Prime {
 
   @Type(type = "text")
   private String value;
-
+  @CreationTimestamp
   private Instant creationDatetime;
 }

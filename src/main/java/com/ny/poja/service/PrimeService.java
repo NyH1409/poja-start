@@ -31,13 +31,13 @@ public class PrimeService {
   public BigInteger generatePrime() {
     var rnd = new Random();
     BigInteger value = probablePrime(BIT_LENGTH, rnd);
-    repository
+    var generated = repository
         .save(
             Prime.builder()
                 .id(randomUUID().toString())
                 .creationDatetime(Instant.now())
                 .value(value.toString())
-                .build());
-    return value;
+                .build()).getValue();
+    return new BigInteger(generated);
   }
 }
